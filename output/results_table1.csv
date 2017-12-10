@@ -1,0 +1,34 @@
+"group","variable","median","min","max"
+"survey","day of year",149,120,212
+"survey","duration (min)",35,5,176
+"survey","distance (km)",0.644,0.05,1
+"survey","time of day (hrs)",11,5,19.9166666666667
+"biogeographic","temp",13.8,3.5,24.2
+"biogeographic","elev",123.6659,-1.872414,2072.048
+"landscape","seminatural500",0.1301601,0,1
+"landscape","seminatural1000",0.11475175,0,1
+"landscape","seminatural2500",0.1085268,0,1
+"landscape","imperv500",0.24064345,0,0.9684783
+"landscape","imperv1000",0.28661175,0,0.8569156
+"landscape","imperv2500",0.30784415,0,0.8831361
+"landscape","natdiv500",1.6633155,1,6.284967
+"landscape","natdiv1000",2.0098365,1,7.009377
+"landscape","natdiv2500",2.690375,1,6.851327
+"landscape","housed500",4.5601775,0.01194198,228.2201
+"landscape","housed1000",4.967658,0.02048844,202.0335
+"landscape","housed2500",5.464235,0.0222345,141.276
+"landscape","popd500",10.23909,0.03737397,341.5902
+"landscape","popd1000",11.02792,0.03445783,320.3742
+"landscape","popd2500",12.26322,0.04405068,219.4316
+"landscape","yrbuilt500",1969.0565,1939,2005
+"landscape","yrbuilt1000",1968.8605,1939,2005
+"landscape","yrbuilt2500",1967.2835,1939.018,2005
+"demographic","poc500",0.33842655,0.02810408,0.9948901
+"demographic","poc1000",0.35910375,0.02805387,0.9946904
+"demographic","poc2500",0.399673,0.02762512,0.9919958
+"demographic","hs500",0.9146352,0,1
+"demographic","hs1000",0.9087647,0.1428571,1
+"demographic","hs2500",0.8952875,0.3790008,0.9980499
+"demographic","income500diff",6.387515,-60.849,168.1807
+"demographic","income1000diff",6.08782,-61.30473,152.1252
+"demographic","income2500diff",4.708705,-39.78706,127.1275

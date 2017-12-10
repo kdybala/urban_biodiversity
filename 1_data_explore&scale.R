@@ -9,6 +9,31 @@
 dat = read.csv('data/final_compiled_data.csv')
 # 16,949 observations of 51 variables
 
+
+##----SUMMARY OF VARIABLES----
+tmp = dat[-which(duplicated(dat$locationID)), ] #4094
+tmp = tmp[, c(2, 9:12, 17:45)]
+tmp = reshape2::melt(tmp, id.vars='sample_id')
+tmp$group = 'survey'
+tmp$group[tmp$variable %in% c('temp', 'elev')] = 'biogeographic'
+tmp$group[grep('popd|housed|imperv|natdiv|seminatural|yrbuilt', 
+               tmp$variable)] = 'landscape'
+tmp$group[grep('poc|hs|income', tmp$variable)] = 'demographic'
+tmp$group = factor(tmp$group, levels=c(
+  'survey', 'biogeographic', 'landscape', 'demographic'))
+
+table = plyr::ddply(tmp, plyr::.(group, variable), plyr::summarize,
+                    median = median(value, na.rm = T),
+                    min = min(value, na.rm = T),
+                    max = max(value, na.rm = T))
+table[which(table$variable=='hours'), 3:5] = 
+  table[which(table$variable=='hours'), 3:5] * 60 #convert to minutes
+table$variable = plyr::revalue(table$variable, c(
+  'yday'='day of year', 'hours'='duration (min)', 'dist'='distance (km)',
+  'time'='time of day (hrs)'))
+write.csv(table, 'output/results_table1.csv', row.names=F)
+
+
 ##----CORRELATIONS AMONG VARIABLES----
 # remove repeat observations at same unique coordinates
 tmp = dat[-which(duplicated(dat$locationID)), ] #4094
