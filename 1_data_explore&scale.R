@@ -6,7 +6,7 @@
 ## Kristen Dybala, kdybala@gmail.com
 
 
-dat = read.csv('analysis/data/final_compiled_data.csv')
+dat = read.csv('data/final_compiled_data.csv')
 # 16,949 observations of 51 variables
 
 ##----CORRELATIONS AMONG VARIABLES----
@@ -37,6 +37,19 @@ GGally::ggpairs(tmp[, c(
   'popd2500', 'housed2500', 'imperv2500', 'seminatural2500', 'natdiv2500', 
   'yrbuilt2500', 'poc2500', 'hs2500', 'income2500diff')], 
   upper=list(continuous=customcor), lower=list(continuous=customsmooth))
+ggplot2::ggsave('figs/correlations2500.png')
+
+GGally::ggpairs(tmp[, c(
+  'popd1000', 'housed1000', 'imperv1000', 'seminatural1000', 'natdiv1000', 
+  'yrbuilt1000', 'poc1000', 'hs1000', 'income1000diff')], 
+  upper=list(continuous=customcor), lower=list(continuous=customsmooth))
+ggplot2::ggsave('figs/correlations1000.png')
+
+GGally::ggpairs(tmp[, c(
+  'popd500', 'housed500', 'imperv500', 'seminatural500', 'natdiv500', 
+  'yrbuilt500', 'poc500', 'hs500', 'income500diff')], 
+  upper=list(continuous=customcor), lower=list(continuous=customsmooth))
+ggplot2::ggsave('figs/correlations500.png')
 
 ## DECISION: drop housed, imperv, seminatural, hs
 
